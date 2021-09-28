@@ -9,14 +9,14 @@
   * [2 Result](#2-Result)
   * [3 Datasets](#3-Datasets)
   * [4 Environment](#4-Environment)
-  * [5 Pretrained models](#5-Prentrainedmodels)
-  * [6 Quick start](#6-Quickstart)
+  * [5 Pretrained models](#5-Prentrained-models)
+  * [6 Quick start](#6-Quick-start)
     * [train](#train)
     * [inferernce](#inferernce)
-  * [7 Code structure](#7-Codestructure)
+  * [7 Code structure](#7-Code-structure)
     * [structure](#structure)
     * [Parameter description](#Parameter-description)
-  * [8 Model information](#8-Modelinformation)
+  * [8 Model information](#8-Model-information)
 
 # 1 Introduction
 
