@@ -1,48 +1,58 @@
-﻿﻿﻿﻿# PSP_cn
+﻿﻿﻿﻿﻿﻿# 论文复现：Encoding in Style: a StyleGAN Encoder for Image-to-Image Translation
+
 *****
-### English|简体中文
+
+[English](pSp.md)|[简体中文](pSp_cn.md)
+
 * PSP
-    * 一、简介
-    * 二、复现结果
-    * 三、数据集
-    * 四、环境依赖
-    * 五、预训练模型
-    * 六、快速开始
-         * 训练
-         * 测试
-    * 七、代码结构与详细说明
-         * 代码结构
-         * 参数说明
-    * 八、模型信息
+  * [一、简介](#一简介)
+  * [二、复现结果](#二复现结果)
+  * [三、数据集](#三数据集)
+  * [四、环境依赖](#四环境依赖)
+  * [五、预训练模型](#五预训练模型)
+  * [六、快速开始](#六快速开始)
+    * [训练](#训练)
+    * [测试](#测试)
+  * [七、代码结构与详细说明](#七代码结构与详细说明)
+    * [代码结构](#代码结构)
+    * [参数说明](#参数说明)
+  * [八、模型信息](#八模型信息)
 
 # **一、简介**
 
 ***
+
 本项目基于paddlepaddle框架复现pixel2style2pixel(pSp).pSp框架基于一个新颖的编码器网络，直接生成一系列风格向量，这些向量被馈送到一个预训练的风格生成器中，形成扩展的W+潜在空间。该编码器可以直接重建真实的输入图像.
+
 #### **论文**
+
 * [1] Richardson E ,  Alaluf Y ,  Patashnik O , et al. Encoding in Style: a StyleGAN Encoder for Image-to-Image Translation[J].  2020.
+
 #### **参考项目**
+
 * [https://github.com/eladrich/pixel2style2pixel](https://github.com/eladrich/pixel2style2pixel)
+
 #### **项目aistudio地址**
+
 * notebook任务：[https://aistudio.baidu.com/aistudio/projectdetail/2331440](https://aistudio.baidu.com/aistudio/projectdetail/2331440)
 
 # **二、复现结果**
 
 #### **指标（在CelebA-HQ上测试）**
 
-|  模型  | LPIPS  |Similarity|MSE|
-|  :----:| :----: |:----:|:----:|
-|论文|0.17|0.56|0.03|
-|Pytorch模型|0.15|0.57|0.03|
-|Paddle模型|0.17|0.57|0.03|
+|    模型     | LPIPS | Similarity | MSE  |
+| :---------: | :---: | :--------: | :--: |
+|    论文     | 0.17  |    0.56    | 0.03 |
+| Pytorch模型 | 0.15  |    0.57    | 0.03 |
+| Paddle模型  | 0.17  |    0.57    | 0.03 |
 
 #### **视觉对比**
 
-|  论文模型结果  | Paddle复现结果  |
-|  :----:| :----: |
-|![1](examples/1.png)|<img src="inference/inference_coupled/052329.jpg" alt="052329" style="zoom: 25%;" />|
-|![1](examples/2.png)|<img src="inference/inference_coupled/179349.jpg" alt="1" style="zoom: 25%;" />|
-|![1](examples/3.png)|<img src="inference/inference_coupled/145789.jpg" alt="1" style="zoom:25%;" />|
+|     论文模型结果     |                        Paddle复现结果                        |
+| :------------------: | :----------------------------------------------------------: |
+| ![1](examples/1.png) | <img src="inference/inference_coupled/052329.jpg" alt="052329" style="zoom: 25%;" /> |
+| ![1](examples/2.png) | <img src="inference/inference_coupled/179349.jpg" alt="1" style="zoom: 25%;" /> |
+| ![1](examples/3.png) | <img src="inference/inference_coupled/145789.jpg" alt="1" style="zoom:25%;" /> |
 
 # **三、数据集**
 
@@ -60,27 +70,28 @@
 
 下载后将模型的参数保存在`work\pretrained_models\`中
 
-|  模型(文件名)   | Description  |
-|  ----  | ----  |
-| FFHQ StyleGAN(stylegan2-ffhq-config-f.pdparams) | StyleGAN 在FFHQ上训练，来自 [rosinality](https://github.com/rosinality/stylegan2-pytorch) ，输出1024x1024大小的图片 |
-| IR-SE50 Model(model_ir_se50.pdparams)| IR SE 模型，来自 [TreB1eN](https://github.com/TreB1eN/InsightFace_Pytorch) 用于训练中计算ID loss。 |
-| CurricularFace Backbone(CurricularFace_Backbone.paparams)    |     预训练的 CurricularFace model，来自 [HuangYG123](https://github.com/HuangYG123/CurricularFace) 用于Similarity的评估。  |
-|   AlexNet(alexnet.pdparams和lin_alex.pdparams)    |   	用于lpips loss计算。    |
-| StyleGAN Inversion(psp_ffhq_inverse.pdparams)      |   pSp trained with the FFHQ dataset for StyleGAN inversion.    |
+| 模型(文件名)                                              | Description                                                  |
+| --------------------------------------------------------- | ------------------------------------------------------------ |
+| FFHQ StyleGAN(stylegan2-ffhq-config-f.pdparams)           | StyleGAN 在FFHQ上训练，来自 [rosinality](https://github.com/rosinality/stylegan2-pytorch) ，输出1024x1024大小的图片 |
+| IR-SE50 Model(model_ir_se50.pdparams)                     | IR SE 模型，来自 [TreB1eN](https://github.com/TreB1eN/InsightFace_Pytorch) 用于训练中计算ID loss。 |
+| CurricularFace Backbone(CurricularFace_Backbone.paparams) | 预训练的 CurricularFace model，来自 [HuangYG123](https://github.com/HuangYG123/CurricularFace) 用于Similarity的评估。 |
+| AlexNet(alexnet.pdparams和lin_alex.pdparams)              | 用于lpips loss计算。                                         |
+| StyleGAN Inversion(psp_ffhq_inverse.pdparams)             | pSp trained with the FFHQ dataset for StyleGAN inversion.    |
 
 链接：[https://pan.baidu.com/s/1G-Ffs8-y93R0ZlD9mEU6Eg](https://pan.baidu.com/s/1G-Ffs8-y93R0ZlD9mEU6Eg) 提取码：m3nb
 
 pSp encoder预训练模型下载：
 
-|模型|Description|
-|--|--|
-|StyleGAN Inversion(psp_ffhq_inverse.pdparams)|pSp trained with the FFHQ dataset for StyleGAN inversion.|
+| 模型                                          | Description                                               |
+| --------------------------------------------- | --------------------------------------------------------- |
+| StyleGAN Inversion(psp_ffhq_inverse.pdparams) | pSp trained with the FFHQ dataset for StyleGAN inversion. |
 
 # **六、快速开始**
 
 #### **编译算子**
 
 	python scripts/compile_ranger.py
+
 #### **训练**
 
 	python scripts/train.py \
@@ -113,25 +124,26 @@ python scripts/inference.py \
 ```
 
 #### **计算其他指标**
+
 * 计算LPIPS
 
-    python scripts/calc_losses_on_images.py \
-    --mode lpips \
-    --data_path=inference/inference_results \
-    --gt_path=CelebA_test
+  python scripts/calc_losses_on_images.py \
+  --mode lpips \
+  --data_path=inference/inference_results \
+  --gt_path=CelebA_test
 
 * 计算MSE
 
-	python scripts/calc_losses_on_images.py \
-	--mode l2 \
-	--data_path=inference/inference_results \
-	--gt_path=CelebA_test
+  python scripts/calc_losses_on_images.py \
+  --mode l2 \
+  --data_path=inference/inference_results \
+  --gt_path=CelebA_test
 
 * 计算Similarity
 
-	python scripts/calc_id_loss_parallel.py \
-	--data_path=inference/inference_results \
-	--gt_path=CelebA_test
+  python scripts/calc_id_loss_parallel.py \
+  --data_path=inference/inference_results \
+  --gt_path=CelebA_test
 
 # **七、代码结构与详细说明**
 
@@ -160,16 +172,36 @@ python scripts/inference.py \
 
 #### **参数说明**
 
-|  参数   | 默认值  |
-| --  | -- |
-| config  | None, 必选 |
+| 参数   | 默认值     |
+| ------ | ---------- |
+| config | None, 必选 |
 
 # **八、模型信息**
 
 模型的总体信息如下：
 
-|信息|说明|
-|--|--|
-| 框架版本| Paddle 2.1.2 |
-| 应用场景|图像生成|
-|支持硬件|GPU / CPU|
+| 信息     | 说明         |
+| -------- | ------------ |
+| 框架版本 | Paddle 2.1.2 |
+| 应用场景 | 图像生成     |
+| 支持硬件 | GPU / CPU    |
+
+License
+
+```
+# encoding=utf8
+# Copyright (c) 2021 PaddlePaddle Authors. All Rights Reserved.
+
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+
+#     http://www.apache.org/licenses/LICENSE-2.0
+
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+```
+
