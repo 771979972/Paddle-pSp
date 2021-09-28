@@ -5,18 +5,18 @@
 [English](README.md)|[简体中文](README_cn.md)
 
 * paddle-PSP
-  * [1 Introduction](#1 Introduction)
-  * [2 Result](#2 Result)
-  * [3 Dataset](#3 Dataset)
-  * [4 Environment](#4 Environment)
-  * [5 Prentrained models](#5 Prentrained models)
-  * [6 Quick start](#6 Quick start)
+  * [1 Introduction](#1Introduction)
+  * [2 Result](#2Result)
+  * [3 Dataset](#3Dataset)
+  * [4 Environment](#4Environment)
+  * [5 Prentrained models](#5Prentrainedmodels)
+  * [6 Quick start](#6Quick start)
     * [train](#train)
     * [test](#test)
-  * [7 Code structure](#7 Code structure)
+  * [7 Code structure](#7Codestructure)
     * [structure](#structure)
-    * [Parameter description](#Parameter description)
-  * [8 Model information](#8 Model information)
+    * [Parameter description](#Parameterdescription)
+  * [8 Model information](#8Modelinformation)
 
 # 1 Introduction
 
