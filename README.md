@@ -50,7 +50,7 @@ This project is based on the pixel2style2pixel (pSp). pSp framework generates a 
 
 |       Pytorch        |                            Paddle                            |
 | :------------------: | :----------------------------------------------------------: |
-| <img src="examples/1.png" alt="1" style="zoom: 100%;" />| <img src="inference/inference_coupled/052329.jpg" alt="052329" style="zoom: 25%;" /> |
+| <img src="examples/1.png" alt="1" style="zoom: 200%;" />| <img src="inference/inference_coupled/052329.jpg" alt="052329" style="zoom: 15%;" /> |
 | ![1](examples/2.png) | <img src="inference/inference_coupled/179349.jpg" alt="1" style="zoom: 25%;" /> |
 | ![1](examples/3.png) | <img src="inference/inference_coupled/145789.jpg" alt="1" style="zoom:25%;" /> |
 
