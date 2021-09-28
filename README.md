@@ -10,7 +10,7 @@
   * [3 Dataset](#3Dataset)
   * [4 Environment](#4Environment)
   * [5 Prentrained models](#5Prentrainedmodels)
-  * [6 Quick start](#6Quick start)
+  * [6 Quick start](#6Quickstart)
     * [train](#train)
     * [test](#test)
   * [7 Code structure](#7Codestructure)
