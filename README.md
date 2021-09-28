@@ -9,7 +9,7 @@
   * [2 Result](#2-Result)
   * [3 Datasets](#3-Datasets)
   * [4 Environment](#4-Environment)
-  * [5 Pretrained models](#5-Prentrained-models)
+  * [5 Pretrained models](#5-Pretrained-models)
   * [6 Quick start](#6-Quick-start)
     * [train](#train)
     * [inferernce](#inferernce)
