@@ -15,7 +15,7 @@
     * [inferernce](#inferernce)
   * [7 Code structure](#7-Codestructure)
     * [structure](#structure)
-    * [Parameter description](#Parameterdescription)
+    * [Parameter description](#Parameter-description)
   * [8 Model information](#8-Modelinformation)
 
 # 1 Introduction
