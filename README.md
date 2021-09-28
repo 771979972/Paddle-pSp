@@ -12,7 +12,7 @@
   * [5 Pretrained models](#5-Prentrainedmodels)
   * [6 Quick start](#6-Quickstart)
     * [train](#train)
-    * [test](#test)
+    * [inferernce](#inferernce)
   * [7 Code structure](#7-Codestructure)
     * [structure](#structure)
     * [Parameter description](#Parameterdescription)
@@ -112,7 +112,7 @@ Pretrained pSp encoder：
 	--id_lambda=0.1 \
 	--optim_name=ranger
 
-#### **inferernce**
+#### inferernce
 
 ```
 python scripts/inference.py \
