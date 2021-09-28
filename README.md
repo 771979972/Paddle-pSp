@@ -48,11 +48,11 @@ This project is based on the pixel2style2pixel (pSp). pSp framework generates a 
 
 #### **Visual comparison**
 
-|       Pytorch                                                                    |                                                   Paddle                             |
-| :------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------: |
-| ![1](examples/1.png)                                                             | <img src="inference/inference_coupled/052329.jpg" alt="052329" style="zoom: 5%;" /> |
-| ![1](examples/2.png)                                                             | <img src="inference/inference_coupled/179349.jpg" alt="1" style="zoom: 5%;" />      |
-| ![1](examples/3.png)                                                             | <img src="inference/inference_coupled/145789.jpg" alt="1" style="zoom:5%;" />       |
+|       Pytorch                                           |                           Paddle                             |
+| :-----------------------------------------------------: | :----------------------------------------------------------- |
+|   <img src="C:\Users\77197\Desktop\1.png" alt="1"  />   | ![052329](C:\Users\77197\Desktop\052329.jpg)                 |
+| <img src="examples/2.png" alt="1" style="zoom:100%;" /> | <img src="inference/inference_coupled/179349.jpg" alt="1" style="zoom: 25%;" /> |
+| <img src="examples/3.png" alt="1" style="zoom:100%;" /> | <img src="inference/inference_coupled/145789.jpg" alt="1" style="zoom:25%;" /> |
 
 # **3 Datasets**
 
