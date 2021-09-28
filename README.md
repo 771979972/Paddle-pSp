@@ -1,48 +1,58 @@
-﻿﻿﻿﻿# PSP
+﻿﻿﻿﻿﻿﻿# 论文复现：Encoding in Style: a StyleGAN Encoder for Image-to-Image Translation 
+
 *****
-### English|简体中文
-* PSP
-    * [1 Introduction]
-    * [2 Result]
-    * [3 Dataset]
-    * [4 Environment]
-    * [5 Prentrained models]
-    * [6 Quick start]
-         * train
-         * test
-    * [7 Code structure]
-         * structure
-         * Parameter description
-    * [8 Model information]
+
+[English](README.md)|[简体中文](README_cn.md)
+
+* paddle-PSP
+  * [1 Introduction](#1 Introduction)
+  * [2 Result](#2 Result)
+  * [3 Dataset](#3 Dataset)
+  * [4 Environment](#4 Environment)
+  * [5 Prentrained models](#5 Prentrained models)
+  * [6 Quick start](#6 Quick start)
+    * [train](#train)
+    * [test](#test)
+  * [7 Code structure](#7 Code structure)
+    * [structure](#structure)
+    * [Parameter description](#Parameter description)
+  * [8 Model information](#8 Model information)
 
 # 1 Introduction
 
 ***
+
 This project is based on the pixel2style2pixel (pSp). pSp framework generates a series of style vectors based on a novel encoder network, which is fed into a pre-trained style generator to form an extended W + potential space. The encoder can directly reconstruct real input images.
+
 #### Paper
+
 * [1] Richardson E ,  Alaluf Y ,  Patashnik O , et al. Encoding in Style: a StyleGAN Encoder for Image-to-Image Translation[J].  2020.
+
 #### Reference project
+
 * [https://github.com/eladrich/pixel2style2pixel](https://github.com/eladrich/pixel2style2pixel)
+
 #### **Project on Ai Studio**
+
 * notebook：[https://aistudio.baidu.com/aistudio/projectdetail/2331440](https://aistudio.baidu.com/aistudio/projectdetail/2331440)
 
 # **2、Result**
 
 #### **Results（Test on CelebA-HQ）**
 
-|  Model  | LPIPS  |Similarity|MSE|
-|  :----:| :----: |:----:|:----:|
-|Paper|0.17|0.56|0.03|
-|Pytorch|0.15|0.57|0.03|
-|Paddle|0.17|0.57|0.03|
+|  Model  | LPIPS | Similarity | MSE  |
+| :-----: | :---: | :--------: | :--: |
+|  Paper  | 0.17  |    0.56    | 0.03 |
+| Pytorch | 0.15  |    0.57    | 0.03 |
+| Paddle  | 0.17  |    0.57    | 0.03 |
 
 #### **Visual comparison**
 
-|  Pytorch  | Paddle  |
-|  :----:| :----: |
-|![1](examples/1.png)|<img src="inference/inference_coupled/052329.jpg" alt="052329" style="zoom: 25%;" />|
-|![1](examples/2.png)|<img src="inference/inference_coupled/179349.jpg" alt="1" style="zoom: 25%;" />|
-|![1](examples/3.png)|<img src="inference/inference_coupled/145789.jpg" alt="1" style="zoom:25%;" />|
+|       Pytorch        |                            Paddle                            |
+| :------------------: | :----------------------------------------------------------: |
+| ![1](examples/1.png) | <img src="inference/inference_coupled/052329.jpg" alt="052329" style="zoom: 25%;" /> |
+| ![1](examples/2.png) | <img src="inference/inference_coupled/179349.jpg" alt="1" style="zoom: 25%;" /> |
+| ![1](examples/3.png) | <img src="inference/inference_coupled/145789.jpg" alt="1" style="zoom:25%;" /> |
 
 # **3 Datasets**
 
@@ -62,27 +72,28 @@ Framework：PaddlePaddle >=2.0.0
 
 Pretrained models saved in`pretrained_models/`.
 
-|  Pretrained models  | Description  |
-|  ----  | ----  |
-| FFHQ StyleGAN(stylegan2-ffhq-config-f.pdparams) | StyleGAN trained with the FFHQ dataset from[rosinality](https://github.com/rosinality/stylegan2-pytorch) ，output size:1024x1024 |
-| IR-SE50 Model(model_ir_se50.pdparams)| IR_SE model ([TreB1eN](https://github.com/TreB1eN/InsightFace_Pytorch))trained for computering ID loss. |
-| CurricularFace Backbone(CurricularFace_Backbone.paparams)    | Pretrained CurricularFace model([HuangYG123](https://github.com/HuangYG123/CurricularFace))evaled Similarity  |
-|   AlexNet(alexnet.pdparams和lin_alex.pdparams)    |   	computered lpips loss    |
-| StyleGAN Inversion(psp_ffhq_inverse.pdparams)      |   pSp trained with the FFHQ dataset for StyleGAN inversion.    |
+| Pretrained models                                         | Description                                                  |
+| --------------------------------------------------------- | ------------------------------------------------------------ |
+| FFHQ StyleGAN(stylegan2-ffhq-config-f.pdparams)           | StyleGAN trained with the FFHQ dataset from[rosinality](https://github.com/rosinality/stylegan2-pytorch) ，output size:1024x1024 |
+| IR-SE50 Model(model_ir_se50.pdparams)                     | IR_SE model ([TreB1eN](https://github.com/TreB1eN/InsightFace_Pytorch))trained for computering ID loss. |
+| CurricularFace Backbone(CurricularFace_Backbone.paparams) | Pretrained CurricularFace model([HuangYG123](https://github.com/HuangYG123/CurricularFace))evaled Similarity |
+| AlexNet(alexnet.pdparams和lin_alex.pdparams)              | computered lpips loss                                        |
+| StyleGAN Inversion(psp_ffhq_inverse.pdparams)             | pSp trained with the FFHQ dataset for StyleGAN inversion.    |
 
 Baidu driver：[https://pan.baidu.com/s/1G-Ffs8-y93R0ZlD9mEU6Eg](https://pan.baidu.com/s/1G-Ffs8-y93R0ZlD9mEU6Eg) password：m3nb
 
 Pretrained pSp encoder：
 
-|模型|Description|
-|--|--|
-|StyleGAN Inversion(psp_ffhq_inverse.pdparams)|pSp trained with the FFHQ dataset for StyleGAN inversion.|
+| 模型                                          | Description                                               |
+| --------------------------------------------- | --------------------------------------------------------- |
+| StyleGAN Inversion(psp_ffhq_inverse.pdparams) | pSp trained with the FFHQ dataset for StyleGAN inversion. |
 
 # 6 Quick start
 
 #### Compile operation
 
 	python scripts/compile_ranger.py
+
 #### Train
 
 	python scripts/train.py \
@@ -113,6 +124,7 @@ python scripts/inference.py \
 ```
 
 #### Others
+
 * LPIPS
 
 ```
@@ -167,15 +179,35 @@ python scripts/calc_id_loss_parallel.py \
 #### **Parameter description**
 
 | Parameter | Default |
-| --  | -- |
-| Config  | None |
+| --------- | ------- |
+| Config    | None    |
 
 # 8 Model information
 
 The overall information of the model is as follows:
 
-|Information|Descriptions|
-|--|--|
-| Version | Paddle 2.1.2 |
-| Application |Image Generation|
-|Hardware|GPU / CPU|
+| Information | Descriptions     |
+| ----------- | ---------------- |
+| Version     | Paddle 2.1.2     |
+| Application | Image Generation |
+| Hardware    | GPU / CPU        |
+
+# License
+
+```
+# encoding=utf8
+# Copyright (c) 2021 PaddlePaddle Authors. All Rights Reserved.
+
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+
+#     http://www.apache.org/licenses/LICENSE-2.0
+
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+```
+
