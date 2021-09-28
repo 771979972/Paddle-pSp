@@ -5,18 +5,18 @@
 [English](README.md)|[简体中文](README_cn.md)
 
 * paddle-PSP
-  * [1 Introduction](#1Introduction)
-  * [2 Result](#2Result)
-  * [3 Datasets](#3Datasets)
-  * [4 Environment](#4Environment)
-  * [5 Prentrained models](#5Prentrainedmodels)
-  * [6 Quick start](#6Quickstart)
+  * [1 Introduction](#1-Introduction)
+  * [2 Result](#2-Result)
+  * [3 Datasets](#3-Datasets)
+  * [4 Environment](#4-Environment)
+  * [5 Prentrained models](#5-Prentrainedmodels)
+  * [6 Quick start](#6-Quickstart)
     * [train](#train)
     * [test](#test)
-  * [7 Code structure](#7Codestructure)
+  * [7 Code structure](#7-Codestructure)
     * [structure](#structure)
     * [Parameter description](#Parameterdescription)
-  * [8 Model information](#8Modelinformation)
+  * [8 Model information](#8-Modelinformation)
 
 # 1 Introduction
 
@@ -36,7 +36,7 @@ This project is based on the pixel2style2pixel (pSp). pSp framework generates a 
 
 * notebook：[https://aistudio.baidu.com/aistudio/projectdetail/2331440](https://aistudio.baidu.com/aistudio/projectdetail/2331440)
 
-# **2、Result**
+# **2 Result**
 
 #### **Results（Test on CelebA-HQ）**
 
