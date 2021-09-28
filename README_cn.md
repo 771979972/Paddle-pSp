@@ -50,7 +50,7 @@
 
 |                      论文模型结果                       |                        Paddle复现结果                        |
 | :-----------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="examples/1.png" alt="1" style="zoom: 100%;" /> | <img src="inference/inference_coupled/052329.jpg" alt="052329" style="zoom: 25%;" /> |
+| <img src="examples/1.png" alt="1" style="zoom: 200%;" /> | <img src="inference/inference_coupled/052329.jpg" alt="052329" style="zoom: 25%;" /> |
 | <img src="examples/2.png" alt="2" style="zoom:50%;" />  | <img src="inference/inference_coupled/179349.jpg" alt="179349" style="zoom: 50%;" /> |
 | <img src="examples/3.png" alt="3" style="zoom:50%;" />  | <img src="inference/inference_coupled/145789.jpg" alt="145789" style="zoom: 50%;" /> |
 
